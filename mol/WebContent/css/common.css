@@ -1,0 +1,90 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+header {
+	background-color: #492e4e;
+	padding: 10px;
+	text-align: center;
+	font-size: 35px;
+	color: #efff71;
+}
+
+
+
+article {
+	float: left;
+	width: 100%;
+	background-color: #000000;
+	min-height: 300px; /* only for demonstration, should be removed */
+	height: auto;
+}
+
+div.wrap{
+	margin: auto;
+	width: 60%;
+	height: 500px;
+	background-color: #fdf2ff;
+	padding: 50px;
+}
+
+h3.h3_text{
+font-size: 50px;
+    color: #100000;
+    text-align: center;
+}
+
+form.form_text{
+font-size: 20px;
+    color: #100000;
+    text-align: center;
+    padding: 50px;
+    margin: 20px;
+}
+
+form.form_form{
+font-size: 20px;
+    color: #100000;
+    text-align: center;
+}
+
+p.p_text{
+font-size: 20px;
+    color: #100000;
+    text-align: center;
+}
+
+/* Clear floats after the columns */
+section:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+section{
+	background-color: #ccc;
+}
+
+/* Style the footer */
+footer {
+	background-color: #000;
+	padding: 10px;
+	text-align: right;
+	color: white;
+}
+
+input {
+	margin-bottom: 10px; 
+}
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media ( max-width : 600px) {
+	article {
+		width: 100%;
+		height: auto;
+	}
+}
