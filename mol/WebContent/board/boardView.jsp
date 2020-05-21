@@ -5,25 +5,68 @@
 <html>
 <head>
 <title>게시판 단건조회 view페이지</title>
+<script>
+
+	function commentShow() {
+		if (list.style.display == "") {
+			list.style.display = "none"
+		} else {
+			list.style.display = ""
+		}
+
+	}
+</script>
 </head>
 <body>
 
 	<%@include file="/common/menu.jsp"%>
 	<jsp:include page="/common/header.jsp"/>	
-	<form action="/mol/BoardView.do" method="get" >
+	<form action="/mol/BoardView.do" method="get" class="cm_boardview">
 	<input type="hidden" name="seq" value="${vo.seq}">
-		작성자: <span id="id">${vo.id}</span><br><br>
-		제목: <span id="title">${vo.title}</span><br><br>
-		추천취미: <span id="recommend">${vo.recommend}</span><br><br>
-		추천이유 <br><br>
-		<span id="reason">${vo.reason}</span><br><br><br>
+		<table border="1" width="100%" height="200px">
+		
+		<tr><td  style="width:30%" >작성자</td> <td style="width:70%"><span id="id">${vo.id}</span></td></tr>
+		<tr><td>제목</td> <td><span id="title">${vo.title}</span></td></tr>
+		<tr><td>추천취미</td> <td><span id="recommend">${vo.recommend}</span></td></tr>
+		<tr><td>추천이유</td> <td><span id="reason">${vo.reason}</span></td></tr>
+	
+		</table>
 	
 	<c:if test="${loginId == vo.id}">
 	<a href="BoardUpdate.do?seq=${vo.seq}">수정</a>
 	</c:if>
+	
+
+	<br><br>
+	
+	<button type="button" onclick="commentShow()">댓글열기</button> <br>
+
+	<table id="list" style="display:none" class="cm_list" >
+		<tr><th style="width:30%">작성자</th><th style="width:70%">댓글</th></tr>
+		<c:forEach items="${list}" var="vo">
+		
+			<tr >	
+				<td>${vo.id}</td>
+				<td>${vo.comments}</td>
+			
+			</tr>
+
+		</c:forEach>
+	</table>	
+	
 	</form>
 	
-	<a href="BoardLike.do">추천</a>
+	<form action="CommentsInsert.do">
+	<input name="bseq" value="${vo.seq}" type="hidden"/>
+	<table class="cm_view" >
+		<tr><th >ID</th><th >댓글쓰기</th></tr> <br><br>
+		<tr>
+		<td ><span id="id2">${loginId}</span></td>
+		<td ><textarea cols="80" rows="2"  name="comments" id="comments"></textarea></td>
+		<td><button>등록</button></td>
+		</tr> 	
+	</table>
+	</form>
 	
 	<%@include file="/common/footer.jsp"%>
 

@@ -3,7 +3,7 @@
 }
 
 body {
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: 10px Arial, Helvetica, sans-serif;
 }
 
 /* Style the header */
@@ -21,29 +21,35 @@ article {
 	float: left;
 	width: 100%;
 	background-color: #000000;
-	min-height: 300px; /* only for demonstration, should be removed */
-	height: auto;
+	min-height: 400px; /* only for demonstration, should be removed */
+	height: 100%;
 }
 
 div.wrap{
 	margin: auto;
-	width: 60%;
-	height: 500px;
-	background-color: #fdf2ff;
-	padding: 50px;
+    width: 50%;
+    min-height: 500px;
+    background-color: #fdf2ff;
+    padding: 50px;
+   
+  
 }
 
 h3.h3_text{
-font-size: 50px;
+font-size: 40px;
     color: #100000;
     text-align: center;
+}
+
+form{
+	font-size: 13px;
 }
 
 form.form_text{
 font-size: 20px;
     color: #100000;
     text-align: center;
-    padding: 50px;
+    padding: 30px;
     margin: 20px;
 }
 
@@ -85,6 +91,74 @@ input {
 @media ( max-width : 600px) {
 	article {
 		width: 100%;
-		height: auto;
+		height: 100%;
 	}
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+ul.mm{
+	background-color: #0e0e0e;
+}
+
+ul.mm li {
+	float: left;
+}
+
+ul.mm li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+ul.mm li a:hover {
+	background-color: #111;
+}
+
+.pagination li{
+	float: left;
+	margin: 5px;
+}
+
+.cm_list{
+	width: 100%;
+    text-align: center;
+}
+
+.cm_boardview{
+	width: 100%;
+    padding: 10px;
+    margin: auto;
+}
+
+.cm_view{
+		width: 100%;
+    text-align: center;
+}
+
+.cm_boardlist{
+		width: 100%;
+    text-align: center;
+}
+
+.cm_login{
+		width: 100%;		
+    text-align: center;
+  
+}
+.cm_insert{
+	width: 100%;		
+    text-align: center;
+}
+.cm_mupdate{
+	width: 100%;		
+    text-align: center;
+}
 }

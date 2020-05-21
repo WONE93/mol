@@ -25,3 +25,25 @@ CONSTRAINT boared_FK FOREIGN KEY (id) REFERENCES member(id)
 CREATE SEQUENCE seq_mol;
 
 update board set love = love+1 where seq = 21
+
+
+create table comments(
+seq number(20) ,
+id varchar2(20) ,
+comments varchar2(100),
+regdt date ,
+CONSTRAINT comments_PK PRIMARY KEY (seq),
+CONSTRAINT comments_FK FOREIGN KEY (id) REFERENCES member(id)
+)
+
+drop table comments
+
+create table comments(
+cseq number(20) ,
+bseq number(20),
+id varchar2(20) ,
+comments varchar2(100),
+regdt date ,
+CONSTRAINT comments_PK PRIMARY KEY (cseq),
+CONSTRAINT comments_FK FOREIGN KEY (bseq) REFERENCES board(seq)
+)

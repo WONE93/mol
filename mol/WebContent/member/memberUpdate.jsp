@@ -6,9 +6,9 @@
 <title>회원정보수정</title>
 	<%@include file="/common/menu.jsp"%>
 	<jsp:include page="/common/header.jsp"/>
-	<h3>회원 정보 수정</h3>
+	<h3 style="text-align: center">회원 정보 수정</h3>
 
-	<form  name="frm" action="/mol/MemberUpdate.do" method="post">
+	<form  name="frm" action="/mol/MemberUpdate.do" method="post" class="cm_mupdate">
 	
 	ID : <input type="text" name="id" readonly="readonly" value="${member.id}" /><br /> 
 	비밀번호 : <input type="password" name="pwd" id="pwd" value="${member.pwd}" /><br /> 

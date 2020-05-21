@@ -42,8 +42,8 @@ function validCheck(){
 </script>
 	<%@include file="/common/menu.jsp"%>
 	<jsp:include page="/common/header.jsp"/>	
-	<h3>회원가입신청서</h3>
-	<form  name="frm" action="/mol/MemberInsert.do" method="post">
+	<h3 style="text-align: center">회원가입신청서</h3>
+	<form  name="frm" action="/mol/MemberInsert.do" method="post"  class="cm_insert">
 	<!-- 여기서 ../안쓰면 member/memberIndert.do 부르는 거랑 같음 -->
 	ID : <input type="text" name="id" /><br /> 
 	비밀번호 : <input type="password" name="pwd" id="pwd" /><br /> 
@@ -65,7 +65,7 @@ function validCheck(){
 	<textarea cols="40" rows="5" name="introduction" id="introduction"></textarea> <br><br>
 	
 	<button type="button" onclick="validCheck()">회원가입</button>
-
+	
 
 
 </form>

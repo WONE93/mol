@@ -8,7 +8,7 @@
 	<jsp:include page="/common/header.jsp"/>
 
 	<h3>수정하기</h3>
-	<form action="/mol/BoardUpdate.do" method="post">
+	<form action="/mol/BoardUpdate.do" method="post" >
 	<input name="seq" value="${vo.seq}" type="hidden"/>
 	작성자: <input id="id" name="id" value="${vo.id}"><br/>
 	제목: <input id="title" name="title" value="${vo.title}"><br/>
