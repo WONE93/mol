@@ -10,7 +10,7 @@
 	<jsp:include page="/common/header.jsp"/>
 	
 	<h3 class="h3_text">Welcome Share Hobby</h3>
-	<p class="p_text">소중한 일상을 공유해주세요</p>
+	<p class="p_text">취미를 공유해주세요</p>
 	
 	<%@include file="/common/footer.jsp"%>
 </body>

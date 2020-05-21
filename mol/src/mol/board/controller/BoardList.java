@@ -40,7 +40,7 @@ public class BoardList extends HttpServlet {
 		}
 		//페이징 객체를 생성
 		Paging paging = new Paging();
-		paging.setPageUnit(5);  //현재페이지에 출력할 레코드 건수 디폴트는 10개
+		paging.setPageUnit(1);  //현재페이지에 출력할 레코드 건수 디폴트는 10개
 		paging.setPageSize(3); // 한페이지에 페이지번호가 3개씩 보일것. 디폴트는 10
 		paging.setPage(p); // 현재페이지
 		paging.setTotalRecord(dao.getCount(id2)); // 전체 레코드 건수 조회 CUZ마지막건수가 정의돼야해서(얘는 필수)

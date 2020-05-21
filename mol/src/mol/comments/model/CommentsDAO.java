@@ -77,5 +77,34 @@ public class CommentsDAO {
 		}
 		return list;
 	}
+	
+	  //삭제
+	   public void deleteComments(String bseq) {
+	      
+	      try {
+	         // 1. DB 연결
+	         conn = ConnectionManager.getConnnect();
+
+	         // 2. sql구문 준비
+	         String sql = "delete from comments where bseq= ? ";
+
+	  
+	         psmt = conn.prepareStatement(sql);
+
+	         // 3. 실행
+	         psmt.setString(1, bseq);
+
+	         psmt.executeUpdate();
+
+	         // 4. 결과처리
+
+	      } catch (Exception e) {
+	         e.printStackTrace();
+	      } finally {
+	         // 5. 연결해제
+	         ConnectionManager.close(conn);
+	      }
+
+	   }
 
 }

@@ -21,8 +21,8 @@ public class BoardDAO {
 			conn = ConnectionManager.getConnnect();
 
 			// 2. sql구문 준비
-			String sql = "insert into board (seq , id, title , recommend ,reason, love, regdt )"
-					+ " values ( seq_mol.nextval, ?, ?, ?, ?, ?, sysdate)";
+			String sql = "insert into board (seq , id, title , recommend ,reason, regdt )"
+					+ " values ( seq_mol.nextval, ?, ?, ?, ?, sysdate)";
 
 			psmt = conn.prepareStatement(sql);
 
@@ -31,7 +31,7 @@ public class BoardDAO {
 			psmt.setString(2, board.getTitle());
 			psmt.setString(3, board.getRecommend());
 			psmt.setString(4, board.getReason());
-			psmt.setString(5, board.getLove());
+			
 
 			psmt.executeUpdate();
 
@@ -82,7 +82,6 @@ public class BoardDAO {
 				vo.setTitle(rs.getString("title"));
 				vo.setName(rs.getString("name"));// 결과값에 담기
 				vo.setId(rs.getString("id"));
-				vo.setLove(rs.getString("love"));
 				vo.setRegdt(rs.getString("regdt"));
 				list.add(vo); // 5.리스트에 담기
 			}
@@ -126,34 +125,34 @@ public class BoardDAO {
 		return vo;
 	}
 	
-	//like count
-	public int getLike(BoardVO board) {
-		int r = 0;
-		ResultSet rs = null;
-		try {
-			
-		  //1. DB연결
-			conn = ConnectionManager.getConnnect();
-			
-		  //2. sql 구문 준비
-			String sql = "update board set love= nvl(love,0)+1 where seq = ?";
-			
-			psmt = conn.prepareStatement(sql);
-			
-			//실행
-//			psmt.setInt(1, Integer.parseInt(seq));
-			psmt.setString(1, board.getLove());
-			psmt.setString(2, board.getSeq());
-			
-			r = psmt.executeUpdate();
-		}catch (Exception e) {
-			e.printStackTrace();
-		}finally {
-			// 5. 연결해제
-			ConnectionManager.close(conn);
-		}
-		return r;
-	}
+//	//like count
+//	public int getLike(BoardVO board) {
+//		int r = 0;
+//		ResultSet rs = null;
+//		try {
+//			
+//		  //1. DB연결
+//			conn = ConnectionManager.getConnnect();
+//			
+//		  //2. sql 구문 준비
+//			String sql = "update board set love= nvl(love,0)+1 where seq = ?";
+//			
+//			psmt = conn.prepareStatement(sql);
+//			
+//			//실행
+////			psmt.setInt(1, Integer.parseInt(seq));
+//			psmt.setString(1, board.getLove());
+//			psmt.setString(2, board.getSeq());
+//			
+//			r = psmt.executeUpdate();
+//		}catch (Exception e) {
+//			e.printStackTrace();
+//		}finally {
+//			// 5. 연결해제
+//			ConnectionManager.close(conn);
+//		}
+//		return r;
+//	}
 	
 	// 수정
 		public int boardUpdate(BoardVO board) {
@@ -222,5 +221,36 @@ public class BoardDAO {
 			return cnt;
 			
 		}
+		
+		   //삭제
+		   public void deleteBoard(String seq) {
+		      
+		      try {
+		         // 1. DB 연결
+		         conn = ConnectionManager.getConnnect();
+
+		         // 2. sql구문 준비
+		         String sql = "delete from board where seq= ? ";
+
+		  
+		         psmt = conn.prepareStatement(sql);
+
+		         // 3. 실행
+		         psmt.setString(1, seq);
+
+		         psmt.executeUpdate();
+
+		         // 4. 결과처리
+
+		      } catch (Exception e) {
+		         e.printStackTrace();
+		      } finally {
+		         // 5. 연결해제
+		         ConnectionManager.close(conn);
+		      }
+
+		   }
+		   
+		
 
 }

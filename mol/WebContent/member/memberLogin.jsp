@@ -12,8 +12,8 @@
 	<div>${errorMsg}</div>
 	<form action="/mol/MemberLogin.do" method="post" class="cm_login">
 		
-		<input name="id" placeholder="id" value="${param.id}"><br> 
-		<input name="pwd" placeholder="pwd" value="${param.pwd}"><br><br><br>
+		<input class="input_login" name="id" placeholder="id" value="${param.id}"><br> 
+		<input class="input_login" name="pwd" placeholder="pwd" value="${param.pwd}"><br><br><br>
 		<button>로그인</button>
 	</form>
 

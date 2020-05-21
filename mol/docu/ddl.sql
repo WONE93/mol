@@ -14,12 +14,12 @@ create table board(
 seq number(20),
 id varchar2(20) ,
 title varchar2(20), 
-recommend varchar2(100), --추천취미
-reason varchar2(1000), --추천이유
-love number(5),  -- 추천수
+recommend varchar2(100),
+reason varchar2(1000),  
 regdt date , 
 CONSTRAINT boared_PK PRIMARY KEY (seq),
 CONSTRAINT boared_FK FOREIGN KEY (id) REFERENCES member(id)
+ON DELETE CASCADE
 )
 
 CREATE SEQUENCE seq_mol;
@@ -27,16 +27,8 @@ CREATE SEQUENCE seq_mol;
 update board set love = love+1 where seq = 21
 
 
-create table comments(
-seq number(20) ,
-id varchar2(20) ,
-comments varchar2(100),
-regdt date ,
-CONSTRAINT comments_PK PRIMARY KEY (seq),
-CONSTRAINT comments_FK FOREIGN KEY (id) REFERENCES member(id)
-)
 
-drop table comments
+drop table board
 
 create table comments(
 cseq number(20) ,
@@ -46,4 +38,13 @@ comments varchar2(100),
 regdt date ,
 CONSTRAINT comments_PK PRIMARY KEY (cseq),
 CONSTRAINT comments_FK FOREIGN KEY (bseq) REFERENCES board(seq)
+ON DELETE CASCADE
 )
+
+ALTER TABLE board ADD (
+    CONSTRAINT boared_PK
+    PRIMARY KEY (seq)
+     REFERENCES comments (bseq)
+ ON DELETE CASCADE
+);
+

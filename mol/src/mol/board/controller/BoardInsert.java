@@ -31,6 +31,7 @@ public class BoardInsert extends HttpServlet {
 				request.setCharacterEncoding("utf-8");
 
 				// 1.파라미터 받기
+				String seq = request.getParameter("seq"); // 이런식으로 아이디와 패스워드 받기
 				String title = request.getParameter("title"); // 이런식으로 아이디와 패스워드 받기
 				String id = request.getParameter("id");
 				String recommend = request.getParameter("recommend");

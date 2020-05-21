@@ -42,31 +42,38 @@ function validCheck(){
 </script>
 	<%@include file="/common/menu.jsp"%>
 	<jsp:include page="/common/header.jsp"/>	
-	<h3 style="text-align: center">회원가입신청서</h3>
-	<form  name="frm" action="/mol/MemberInsert.do" method="post"  class="cm_insert">
+	<table width="80%"  border="1">
+	<tr><td>
+	<h3 style="text-align: center">회원가입신청</h3> </td></tr>
+	<form  name="frm" action="/mol/MemberInsert.do" method="post" class="form_minsert">
 	<!-- 여기서 ../안쓰면 member/memberIndert.do 부르는 거랑 같음 -->
-	ID : <input type="text" name="id" /><br /> 
-	비밀번호 : <input type="password" name="pwd" id="pwd" /><br /> 
-	이름: <input type="text" name="name" id="name" /><br /> 
+	<tr>
+	<td>ID <br> <input style=width:100%; type="text" name="id" /><br /> 
+	비밀번호 <br>  <input style="width:100%;  type="password" name="pwd" id="pwd" /><br /> 
+	이름<br> <input style="width:100%;  type="text" name="name" id="name" /><br /> 
 		
 		성별: 
-		<input type="radio" name="gender" value="m" />남자
+		<input  type="radio" name="gender" value="m" />남자
 		<input type="radio" name="gender" value="f" />여자</br> 
 		
 		가입경로: 
 		<input type="checkbox" name="path" value="p01" />인터넷
-		<input type="checkbox" name="path" value="p02" />지인소개
-		<input type="checkbox" name="path" value="p03" />기타<br>
+		<input  type="checkbox" name="path" value="p02" />지인소개
+		<input  type="checkbox" name="path" value="p03" />기타<br> 
 
 	
 		
 		
 		자기소개<br/>
-	<textarea cols="40" rows="5" name="introduction" id="introduction"></textarea> <br><br>
+	<textarea style="width:100%;  cols="40" rows="5" name="introduction" id="introduction"></textarea> <br><br>
+	</td></tr>
 	
-	<button type="button" onclick="validCheck()">회원가입</button>
-	
-
+	<table width="50%">
+	<tr><td>	
+	<button type="button" onclick="validCheck()">회원가입</button>  
+	</td></tr>
+	</table>
+</table>
 
 </form>
 	

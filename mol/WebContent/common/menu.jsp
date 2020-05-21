@@ -1,12 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<link rel="stylesheet" type="text/css" href="/mol/css/common.css">	
 <!DOCTYPE html>
 <html>
 <head>
 <title>Insert title here</title>
 </head>
-<%String contextPath = getServletContext().getContextPath(); %>
+
+<% String contextPath = getServletContext().getContextPath(); %>
 <body>
+
 	<ul class="mm">
 		<li><a class="active" href="<%=contextPath%>/main/main.jsp">Home</a></li>
 		
@@ -25,5 +28,6 @@
 		
 
 	</ul>
+
 </body>
 </html>
