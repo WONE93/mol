@@ -14,7 +14,7 @@
 	추천취미: <input type="textarea" name="recommend" id="recommend"/><br/>
 	추천이유<br><br>
 	<textarea cols="40" rows="5" name="reason" id="reason"></textarea><br><br>
-	 w
+	 
 		
 		<input type="submit" value="저장" />
 

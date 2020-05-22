@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import mol.board.model.BoardDAO;
 import mol.comments.model.CommentsDAO;
 
-/**
+/**  
  * Servlet implementation class BoardDelete
  */
 @WebServlet("/BoardDelete.do")

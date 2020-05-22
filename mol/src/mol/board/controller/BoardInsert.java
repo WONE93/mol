@@ -36,8 +36,7 @@ public class BoardInsert extends HttpServlet {
 				String id = request.getParameter("id");
 				String recommend = request.getParameter("recommend");
 				String reason = request.getParameter("reason");
-				String love = request.getParameter("love");
-
+	
 
 				// 2.서비스 로직 처리(DAO)
 				BoardDAO boardDAO = new BoardDAO();
@@ -48,7 +47,7 @@ public class BoardInsert extends HttpServlet {
 				board.setId(id);
 				board.setRecommend(recommend);
 				board.setReason(reason);
-				board.setLove(love);
+		
 				
 				boardDAO.boardInsert(board);
 				

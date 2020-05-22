@@ -24,7 +24,7 @@ public class BoardDAO {
 			String sql = "insert into board (seq , id, title , recommend ,reason, regdt )"
 					+ " values ( seq_mol.nextval, ?, ?, ?, ?, sysdate)";
 
-			psmt = conn.prepareStatement(sql);
+			psmt = conn.prepareStatement(sql);   
 
 			// 3. 실행
 			psmt.setString(1, board.getId());

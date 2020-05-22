@@ -8,7 +8,7 @@ introduction varchar2(1000), --자기소개
 regdt date --가입일자 
 )
 
-drop table board
+drop table comments
 
 create table board(
 seq number(20),
@@ -47,4 +47,16 @@ ALTER TABLE board ADD (
      REFERENCES comments (bseq)
  ON DELETE CASCADE
 );
+
+
+create table comments(
+cseq number(20) ,
+bseq number(20),
+id varchar2(20) ,
+comments varchar2(100),
+regdt date ,
+CONSTRAINT comments_PK PRIMARY KEY (cseq),
+CONSTRAINT comments_FK FOREIGN KEY (bseq) REFERENCES board(seq)
+ON DELETE CASCADE
+)
 
